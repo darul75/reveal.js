@@ -28,13 +28,24 @@
 				    <script type="text/template">
 				        ## ![](https://www.qualys.com/asset/image/2015/rsac/splunk-white.png)
 
+				        * Plateforme d'analyse de données "machines"
+
+				        * Indexation sources de données diverses (BD, LOGS...)
+
+				        * Temps réel / historique
+				        
+				        * Recherche, statistiques, reporting, alerte        
+				    </script>
+				</section>			
+				<section data-markdown>
+				    <script type="text/template">
+				        ## Marketing
+
 				        Permet aux curieux d'examiner de près ce que les autres ignorent 
 
 				        **les données machine**
 
-				        et d'y trouver ce que les autres ne voient jamais.				        
-
-				        CENTRALISER => ANALYSER
+				        et d'y trouver ce que les autres ne voient jamais.				        				        
 				    </script>
 				</section>
 				<section data-markdown>
@@ -49,9 +60,7 @@
 
 				        Big Data
 
-				        Securité
-
-				        
+				        Securité				        
 				    </script>
 				</section>				
 				<section data-markdown>
@@ -66,13 +75,35 @@
 				</section>
 				<section data-markdown>
 				    <script type="text/template">
-				        ## JSON API PAYLOAD
+				        ## LOG DEFINITION
 
-				        ```
-				        {
-				        	action: 'UPDATE'
-				        }
-				        ```
+|ACTION|STEP|LEVEL|CONTENT|
+|--------|:--------------:|:-------:|---------------------:|
+|LOGIN|AUTH_SUCCESS|INFO|session_id, user_id|
+|LOGIN|AUTH_FAILED|ERROR|session_id, user_id|
+|...|...|...|...|
+
+				    </script>
+				</section>
+				<section data-markdown>
+				    <script type="text/template">
+				        ## HTTP Collector
+
+				        HTTP input endpoint
+
+```
+{
+   action: LOGIN
+   action_step: AUTH_SUCCESS
+   level: INFO
+   properties: {
+     session_id: "62f99050-7910-475b-934e-68fd5c7c858a"
+     user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:45.0) Gecko/20100101 Firefox/45.0,gzip(gfe),gzip(gfe)"
+     user_id: "8a8196a15278f178015283e2a21e39fa"
+     version: 0.0.4
+   }
+}
+```
 				        
 				    </script>
 				</section>
